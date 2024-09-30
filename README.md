@@ -10,6 +10,7 @@ Um conversor de moedas simples e eficiente que permite a conversão entre 9 tipo
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação](#instalação)
 - [Uso](#uso)
+- [Screenshot](#screenshot)
 - [Contribuição](#contribuição)
 - [Licença](#licença)
 

@@ -1,4 +1,4 @@
-# Conversor de Moedas
+# Conversor de Moedas 💲
 
 Um conversor de moedas simples e eficiente que permite a conversão entre 9 tipos de moedas diferentes e gera um histórico de uso.
 

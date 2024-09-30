@@ -7,9 +7,11 @@ import com.google.gson.JsonObject;
 import java.time.Duration;
 
 public class ApiConversao {
+    // URL base da API de conversão de moedas
     private static final String API_URL = "https://v6.exchangerate-api.com/v6/d09e04891d333a2c49c6ac98/latest/";
 
     public static double obterTaxaCambio(String moedaOrigem, String moedaDestino) throws Exception {
+        // Constrói a URL completa com a moeda de origem
         String urlStr = API_URL + moedaOrigem;
 
         // Criação do cliente HTTP com timeout de conexão
@@ -44,13 +46,16 @@ public class ApiConversao {
         String responseBody = response.body();
         JsonObject jsonObject = JsonParser.parseString(responseBody).getAsJsonObject();
 
+        // Obtém o resultado da operação
         String resultado = jsonObject.get("result").getAsString();
         
         // Extração da taxa de câmbio
         if ("success".equals(resultado)) {
+            // Se a operação foi bem-sucedida, obtém a taxa de câmbio desejada
             JsonObject taxas = jsonObject.getAsJsonObject("conversion_rates");
             return taxas.get(moedaDestino).getAsDouble();
         } else {
+            // Se houve falha, lança uma exceção com a mensagem de erro
             throw new Exception("Falha ao obter taxa de câmbio: " + jsonObject.get("error-type").getAsString());
         }
     }

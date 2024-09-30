@@ -115,13 +115,19 @@ public class InteracaoUsuario {
                         Number number = format.parse(valorString);
                         valor = number.doubleValue();
                         
-                        if (valor <= 0) {
-                            throw new IllegalArgumentException("Valor inválido. Favor digitar um número positivo maior que zero.");
+                        if (valor < 0) {
+                            System.out.println("Número negativo não é aceito. Favor digitar um número positivo maior que zero.");
+                            continue;
+                        }
+                        
+                        if (valor == 0) {
+                            System.out.println("Valor inválido. Favor digitar um número maior que zero.");
+                            continue;
                         }
                         valorValido = true;
                     } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                        System.out.println("Por favor, tente novamente.");
+                        System.out.println("Somente números são aceitos");
+                        System.out.println("Favor digitar novamente.");
                     }
                 }
                 
@@ -292,7 +298,7 @@ public class InteracaoUsuario {
     }
 
     // Método para obter o nome formatado do valor
-    private String obterNomeValor(String moeda, double valor) {
+    public String obterNomeValor(String moeda, double valor) {
         return String.format("%.2f %s", valor, moeda);
     }
 

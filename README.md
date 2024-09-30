@@ -15,12 +15,12 @@ Um conversor de moedas simples e eficiente que permite a conversão entre 9 tipo
 
 ## Sobre
 
-Este conversor de moedas foi desenvolvido para facilitar a conversão entre diferentes moedas, permitindo que os usuários realizem conversões rápidas e acessíveis. Além disso, o aplicativo mantém um histórico de todas as conversões realizadas, para que os usuários possam acompanhar suas atividades.
+Este conversor de moedas foi desenvolvido para facilitar a conversão entre diferentes moedas, permitindo que o(a) usuário(a) realize conversões rápidas e acessíveis. Além disso, o aplicativo mantém um histórico de todas as conversões realizadas, para que o(a) usuário(a) possa acompanhar suas atividades.
 
 ## Funcionalidades
 
 - Conversão entre 9 tipos de moedas diferentes.
-- Geração de histórico de conversões, registrando todas as operações do usuário.
+- Geração de histórico de conversões, registrando todas as operações do(a) usuário(a).
 - Interface amigável e fácil de usar.
 
 ## Moedas Suportadas
@@ -77,7 +77,7 @@ Siga as instruções no terminal para selecionar as moedas e inserir o valor a s
 
 O histórico de conversões será salvo e exibido no terminal caso deseje.
 
-## Screenshots
+## Screenshot
 
 ![App Screenshot](https://github.com/rquinalha/Outros/blob/main/app.png)
 

@@ -75,6 +75,7 @@ public class InteracaoUsuario {
                     }
                 }
                 
+                // Verifica se o usuário deseja continuar após escolher a moeda de destino
                 if (!continuar) break;
                 
                 System.out.println("===>>> Você escolheu a moeda " + moedas[opcaoDestino - 1]);
@@ -94,10 +95,12 @@ public class InteracaoUsuario {
                 double valor = 0;
                 boolean valorValido = false;
                 
+                // Loop para obter um valor válido do usuário
                 while (!valorValido) {
                     System.out.printf("Digite o valor em %s (%s): ", moedaOrigem, simboloOrigem);
                     String valorString = scanner.nextLine().trim();
                     
+                    // Verifica se o usuário digitou algum valor
                     if (valorString.isEmpty()) {
                         System.out.println("Você não digitou nenhum valor.");
                         if (!tratarErroContinuar(scanner)) {
@@ -107,6 +110,7 @@ public class InteracaoUsuario {
                         else continue;
                     }
                     
+                    // Substitui vírgula por ponto para facilitar a conversão
                     valorString = valorString.replace(',', '.');
                     
                     try {
@@ -115,11 +119,13 @@ public class InteracaoUsuario {
                         Number number = format.parse(valorString);
                         valor = number.doubleValue();
                         
+                        // Verifica se o valor é negativo
                         if (valor < 0) {
                             System.out.println("Número negativo não é aceito. Favor digitar um número positivo maior que zero.");
                             continue;
                         }
                         
+                        // Verifica se o valor é zero
                         if (valor == 0) {
                             System.out.println("Valor inválido. Favor digitar um número maior que zero.");
                             continue;
@@ -131,6 +137,7 @@ public class InteracaoUsuario {
                     }
                 }
                 
+                // Verifica se o usuário deseja continuar após inserir o valor
                 if (!continuar) break;
 
                 // Realiza a conversão
@@ -160,6 +167,7 @@ public class InteracaoUsuario {
                 if (!tratarErroContinuar(scanner)) break;
             }
         }
+        // Fecha o scanner ao finalizar o programa
         scanner.close();
     }
 
@@ -177,7 +185,7 @@ public class InteracaoUsuario {
         System.out.println("7 - CAD (Dólar canadense)");
         System.out.println("8 - JPY (Iene japonês)");
         System.out.println("9 - CNY (Yuan chinês)");
-        System.out.println("10 - Sair da aplicação");
+        System.out.println("10 - Sair da Aplicação");
         System.out.println("11 - Exibir Histórico de Conversões");
         System.out.println("**************************************************");
         System.out.print("Digite aqui o número da sua escolha: ");
@@ -288,12 +296,17 @@ public class InteracaoUsuario {
 
     // Método para adicionar uma conversão ao histórico
     private void adicionarConversaoAoHistorico(double valor, String moedaOrigem, String simboloOrigem, double resultado, String moedaDestino, String simboloDestino) {
+        // Obtém a data e hora atual formatada
         String dataHora = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+        // Formata o valor de origem
         String nomeValorOrigem = String.format("%.2f %s", valor, moedaOrigem);
+        // Formata o valor de destino
         String nomeValorDestino = String.format("%.2f %s", resultado, moedaDestino);
+        // Cria a string de conversão
         String conversao = String.format("%s - Valor em %s %s = %s %s em %s.", 
             dataHora, obterNomeMoeda(moedaOrigem), simboloOrigem + " " + nomeValorOrigem, 
             simboloDestino, nomeValorDestino, obterNomeMoeda(moedaDestino));
+        // Adiciona a conversão ao histórico
         historico.adicionarConversao(conversao);
     }
 

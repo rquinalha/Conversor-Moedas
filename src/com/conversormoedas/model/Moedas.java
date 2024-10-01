@@ -11,7 +11,9 @@ public enum Moedas {
   JPY("Iene Japonês", "¥"),
   CNY("Yuan Chinês", "¥");
 
-  public static final String[] descricoes, siglas, simbolos;
+  public static final String[] descricoes;
+  public static final String[] siglas;
+  public static final String[] simbolos;
 
   static {
     Moedas[] m = Moedas.values();
@@ -31,7 +33,8 @@ public enum Moedas {
     }
     return array;
   }
-  private String descricao, simbolo;
+  private final String descricao;
+  private final String simbolo;
 
   Moedas(String descricao, String simbolo) {
     this.descricao = descricao;

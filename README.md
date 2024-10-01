@@ -26,7 +26,7 @@ Este conversor de moedas foi desenvolvido para facilitar a conversão entre dife
 
 ## Moedas Suportadas
 
-Este conversor funciona com os seguintes tipos de moedas:
+Esse conversor funciona com os seguintes tipos de moedas:
 
 1. BRL (Real brasileiro)
 2. ARS (Peso argentino)
@@ -49,8 +49,10 @@ O conversor permite a conversão entre todas essas moedas e pode ser facilmente 
 
 ## Instalação
 
-Siga os passos abaixo para instalar e configurar a aplicação localmente:
- 
+Antes de rodar a aplicação, você precisa instalar o Java JDK 21 ou superior.
+[Link para download do JDK 21.](https://www.oracle.com/java/technologies/downloads/?er=221886#jdk21-windows)
+
+Siga os passos abaixo para baixar e configurar a aplicação localmente:
 
 
 1. **Clone o repositório:**
@@ -59,22 +61,23 @@ Siga os passos abaixo para instalar e configurar a aplicação localmente:
    ```
 2. **Navegue até o diretório do projeto:**
    ```bash
-   cd nome-da-aplicacao
+   cd "local onde baixou o projeto\Conversor Moedas"
    ```
-3. **Compile o código Java:**
+3. **Insira a API Key:**
+- Para conseguir uma API Key, você precisa se cadastrar no site da [ExchangeRate-API](https://www.exchangerate-api.com) e clicar em <kbd>Get Free Key!</kbd>
+- Abra o arquivo <kbd>**ApiConversao.java**</kbd> que está na pasta <kbd>**src**</kbd>.
+- Localize a linha 11, onde está o seguinte código e substitua o texto "sua-api-key-aqui" pela sua chave de API real, por exemplo:
    ```bash
-   javac ConversorDeMoedas.java
+   private static final String API_URL = "https://v6.exchangerate-api.com/v6/sua-api-key-aqui/latest/";
    ```
-4. **Execute a aplicação via terminal:**
+4. **Abra a pasta da aplicação via terminal e execute o comando abaixo para iniciar a aplicação:**
    ```bash
-   java ConversorDeMoedas
+   java -cp ".;lib\gson-2.11.0.jar;bin" Main
    ```
 
 ## Uso
 
-Para iniciar o conversor de moedas, siga os passos de instalação e execute o programa pelo terminal.
-
-Siga as instruções no terminal para selecionar as moedas e inserir o valor a ser convertido.
+Após executar o programa pelo terminal, é só seguir as instruções para selecionar as moedas e inserir o valor a ser convertido.
 
 O histórico de conversões será salvo e exibido no terminal caso deseje.
 
@@ -86,9 +89,13 @@ O histórico de conversões será salvo e exibido no terminal caso deseje.
 ## Contribuição
 Contribuições são bem-vindas!
 
-Sinta-se à vontade para abrir issues ou pull requests para melhorias, correções de bugs ou novas funcionalidades.
+Sinta-se à vontade para sugerir melhorias, correções de bugs ou novas funcionalidades.
 
 ## Licença
 Este projeto está licenciado sob a MIT License.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+## Desenvolvedor
+
+[<img src="https://avatars.githubusercontent.com/u/173571909?s=400&v=4" width=115><br><sub>Rafael Quinalha</sub>](https://github.com/rquinalha)

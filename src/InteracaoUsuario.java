@@ -350,8 +350,14 @@ public class InteracaoUsuario {
     }
 
     private void solicitarApiKey(Scanner scanner) {
-        System.out.print("Favor inserir sua API Key: ");
-        String apiKey = scanner.nextLine().trim();
+        String apiKey;
+        do {
+            System.out.print("Insira aqui a sua API Key: ");
+            apiKey = scanner.nextLine().trim();
+            if (apiKey.isEmpty()) {
+                System.out.println("Aviso: A API Key não pode estar vazia. Favor tentar novamente.");
+            }
+        } while (apiKey.isEmpty());
         ConfiguracaoApi.setApiKey(apiKey);
     }
 }

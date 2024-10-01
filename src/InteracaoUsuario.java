@@ -19,6 +19,9 @@ public class InteracaoUsuario {
         // Inicializa o scanner para entrada do usuário
         Scanner scanner = new Scanner(System.in);
         
+        // Solicita a API Key no início do programa
+        solicitarApiKey(scanner);
+        
         // Loop principal do programa
         boolean continuar = true;
         while (continuar) {
@@ -344,5 +347,11 @@ public class InteracaoUsuario {
             default:
                 return "Moeda Desconhecida";
         }
+    }
+
+    private void solicitarApiKey(Scanner scanner) {
+        System.out.print("Favor inserir sua API Key: ");
+        String apiKey = scanner.nextLine().trim();
+        ConfiguracaoApi.setApiKey(apiKey);
     }
 }

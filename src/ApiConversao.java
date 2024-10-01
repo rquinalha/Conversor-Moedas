@@ -7,12 +7,11 @@ import com.google.gson.JsonObject;
 import java.time.Duration;
 
 public class ApiConversao {
-    // URL base da API de conversão de moedas
-    private static final String API_URL = "https://v6.exchangerate-api.com/v6/d09e04891d333a2c49c6ac98/latest/";
+    private static final String API_URL_BASE = "https://v6.exchangerate-api.com/v6/";
 
     public static double obterTaxaCambio(String moedaOrigem, String moedaDestino) throws Exception {
-        // Constrói a URL completa com a moeda de origem
-        String urlStr = API_URL + moedaOrigem;
+        String apiKey = ConfiguracaoApi.getApiKey();
+        String urlStr = API_URL_BASE + apiKey + "/latest/" + moedaOrigem;
 
         // Criação do cliente HTTP com timeout de conexão
         HttpClient client = HttpClient.newBuilder()

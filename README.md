@@ -65,11 +65,8 @@ Siga os passos abaixo para baixar e configurar a aplicação localmente:
    ```
 3. **Insira a API Key:**
 - Para conseguir uma API Key, você precisa se cadastrar no site da [ExchangeRate-API](https://www.exchangerate-api.com) e clicar em <kbd>Get Free Key!</kbd>
-- Abra o arquivo <kbd>**ApiConversao.java**</kbd> que está na pasta <kbd>**src**</kbd>.
-- Localize a linha 11, onde está o seguinte código e substitua o texto "sua-api-key-aqui" pela sua chave de API real, por exemplo:
-   ```bash
-   private static final String API_URL = "https://v6.exchangerate-api.com/v6/sua-api-key-aqui/latest/";
-   ```
+- Com sua API Key em mãos, basta copiar e colar os dados da sua Key no terminal.
+
 4. **Abra a pasta da aplicação via terminal e execute o comando abaixo para iniciar a aplicação:**
    ```bash
    java -cp ".;lib\gson-2.11.0.jar;bin" Main

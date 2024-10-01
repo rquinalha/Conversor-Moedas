@@ -149,8 +149,8 @@ public class InteracaoUsuario {
                     resultado = valor * taxaCambio;
 
                     // Exibe o resultado da conversão
-                    System.out.printf("O valor em (%s) %s%.2f equivale a %s%.2f. %s%n", 
-                        obterNomeMoeda(moedaOrigem), simboloOrigem, valor, simboloDestino, resultado, moedas[opcaoDestino - 1]);
+                    System.out.printf("O valor em (%s) %s%.2f equivale a %s%.2f (%s)%n",
+                        obterNomeMoeda(moedaOrigem), simboloOrigem, valor, simboloDestino, resultado, obterNomeMoeda(moedaDestino));
 
                     // Adiciona a conversão ao histórico
                     adicionarConversaoAoHistorico(valor, moedaOrigem, simboloOrigem, resultado, moedaDestino, simboloDestino);
@@ -209,16 +209,16 @@ public class InteracaoUsuario {
     private int obterOpcaoMenuPrincipal(Scanner scanner) throws Exception {
         String entrada = scanner.nextLine().trim();
         if (entrada.isEmpty()) {
-            throw new IllegalArgumentException("Você não escolheu nenhuma opção. Por favor, digite um número entre 1 e 11.");
+            throw new IllegalArgumentException("Você não escolheu nenhuma opção. Favor digitar um número entre 1 e 11.");
         }
         try {
             int opcao = Integer.parseInt(entrada);
             if (opcao < 1 || opcao > 11) {
-                throw new IllegalArgumentException("Opção inválida! Por favor, digite um número entre 1 e 11.");
+                throw new IllegalArgumentException("Opção inválida! Favor digitar um número entre 1 e 11.");
             }
             return opcao;
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Entrada inválida! Por favor, digite um número entre 1 e 11.");
+            throw new IllegalArgumentException("Opção inválida! Favor digitar um número entre 1 e 11.");
         }
     }
 
@@ -226,16 +226,16 @@ public class InteracaoUsuario {
     private int obterOpcaoMoedas(Scanner scanner) throws Exception {
         String entrada = scanner.nextLine().trim();
         if (entrada.isEmpty()) {
-            throw new IllegalArgumentException("Você não escolheu nenhuma opção. Por favor, digite um número entre 1 e 9.");
+            throw new IllegalArgumentException("Você não escolheu nenhuma opção. Favor digitar um número entre 1 e 9.");
         }
         try {
             int opcao = Integer.parseInt(entrada);
             if (opcao < 1 || opcao > 9) {
-                throw new IllegalArgumentException("Opção inválida! Por favor, digite um número entre 1 e 9.");
+                throw new IllegalArgumentException("Opção inválida! Favor digitar um número entre 1 e 9.");
             }
             return opcao;
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Entrada inválida! Por favor, digite um número entre 1 e 9.");
+            throw new IllegalArgumentException("Opção inválida! Favor digitar um número entre 1 e 9.");
         }
     }
 

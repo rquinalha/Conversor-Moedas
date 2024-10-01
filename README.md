@@ -63,7 +63,11 @@ Siga os passos abaixo para baixar e configurar a aplicação localmente:
    ```bash
    cd "local onde baixou o projeto\Conversor Moedas"
    ```
-3. **Abra a pasta da aplicação via terminal e execute o comando abaixo para iniciar a aplicação:**
+3. **Compile os arquivos Java:**
+   ```bash
+   javac -cp lib\gson-2.11.0.jar -d bin src\*.java
+   ```
+4. **Abra a pasta da aplicação via terminal e execute o comando abaixo para iniciar a aplicação:**
    ```bash
    java -cp ".;lib\gson-2.11.0.jar;bin" Main
    ```

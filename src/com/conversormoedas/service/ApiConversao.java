@@ -1,8 +1,10 @@
+package com.conversormoedas.service;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import com.google.gson.JsonParser;
+import com.conversormoedas.util.ConfiguracaoApi;
 import com.google.gson.JsonObject;
 import java.time.Duration;
 

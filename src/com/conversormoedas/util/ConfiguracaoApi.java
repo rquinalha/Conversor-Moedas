@@ -1,3 +1,4 @@
+package com.conversormoedas.util;
 public class ConfiguracaoApi {
     private static String apiKey;
 

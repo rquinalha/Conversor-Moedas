@@ -1,3 +1,4 @@
+package com.conversormoedas.model;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,7 +19,7 @@ public class HistoricoDeConversao {
     // Número máximo de conversões armazenadas
     private static final int TAMANHO_MAXIMO = 10;
     // Nome do arquivo para salvar o histórico
-    private static final String ARQUIVO_HISTORICO = "historico_conversoes.json";
+    private static final String ARQUIVO_HISTORICO = "resources/historico_conversoes.json";
     // Objeto Gson para serialização/deserialização JSON
     private final Gson gson;
 

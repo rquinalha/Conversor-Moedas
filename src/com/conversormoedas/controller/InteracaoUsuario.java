@@ -1,8 +1,13 @@
+package com.conversormoedas.controller;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
+
+import com.conversormoedas.model.HistoricoDeConversao;
+import com.conversormoedas.service.ApiConversao;
+import com.conversormoedas.util.ConfiguracaoApi;
 
 // Classe principal para interação com o usuário
 public class InteracaoUsuario {

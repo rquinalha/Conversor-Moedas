@@ -14,8 +14,8 @@ import java.util.Scanner;
 // Classe principal para interação com o usuário
 public class InteracaoUsuario {
   // Atributo para armazenar o histórico de conversões
-  private HistoricoDeConversao historico;
-  private String[] moedasSimbolos;
+  private final HistoricoDeConversao historico;
+  private final String[] moedasSimbolos;
   private final String[] moedasSiglas;
   private final Moedas[] moedas;
 
@@ -152,13 +152,10 @@ public class InteracaoUsuario {
         // Verifica se o usuário deseja continuar após inserir o valor
         if(!continuar) break;
 
-        // Realiza a conversão
-        double resultado = 0;
-
         try {
           // Obtém a taxa de câmbio e calcula o resultado
           double taxaCambio = ApiConversao.obterTaxaCambio(moedaOrigem, moedaDestino);
-          resultado = valor * taxaCambio;
+          double resultado = valor * taxaCambio;
 
           // Exibe o resultado da conversão
           System.out.printf("O valor em (%s) %s%.2f equivale a %s%.2f (%s)%n",
@@ -228,7 +225,7 @@ public class InteracaoUsuario {
   }
 
   // Método para obter a opção do usuário no menu de moedas
-  private int obterOpcaoMoedas(Scanner scanner) throws Exception {
+  private int obterOpcaoMoedas(Scanner scanner) throws IllegalArgumentException {
     String entrada = scanner.nextLine().trim();
     String mensagemErro = "Favor digitar um número entre 1 e " + this.moedas.length + ".";
     if(entrada.isEmpty()) {
@@ -267,7 +264,6 @@ public class InteracaoUsuario {
 
   // Método para perguntar se o usuário deseja realizar outra conversão
   private boolean tratarDesejaRealizarOutraConversao(Scanner scanner) {
-    boolean respostaValida = false;
     while(true) {
       System.out.println("Deseja realizar outra conversão? (Digite 's' para sim ou 'n' para não)");
       String resposta = scanner.nextLine().trim().toLowerCase();
@@ -276,10 +272,10 @@ public class InteracaoUsuario {
         continue;
       }
       if(resposta.equals("s")) {
-        respostaValida = true;
+
         return true;
       } else if(resposta.equals("n")) {
-        respostaValida = true;
+
         System.out.println("Deseja exibir o histórico de conversões? (Digite 's' para sim ou 'n' para não)");
         resposta = scanner.nextLine().trim().toLowerCase();
         if(resposta.isEmpty()) {

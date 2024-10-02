@@ -25,7 +25,7 @@ public enum Moedas {
   private static String[] populaArrays(Moedas[] moedas, String campo) {
     String[] array = new String[moedas.length];
     for(int i = 0; i < moedas.length; i++) {
-      array[i] = switch(campo.toLowerCase()){
+      array[i] = switch(campo.toLowerCase()) {
         case "descricao" -> moedas[i].descricao;
         case "simbolo" -> moedas[i].simbolo;
         default -> moedas[i].name();
@@ -33,11 +33,16 @@ public enum Moedas {
     }
     return array;
   }
+
   private final String descricao;
   private final String simbolo;
 
   Moedas(String descricao, String simbolo) {
     this.descricao = descricao;
     this.simbolo = simbolo;
+  }
+
+  public String getDescricao() {
+    return this.descricao;
   }
 }

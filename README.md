@@ -63,15 +63,15 @@ Siga os passos abaixo para baixar e configurar a aplicação localmente:
    ```bash
    cd "local onde baixou o projeto\Conversor Moedas"
    ```
-3. **Compile os arquivos Java:**
+3. **Abra a pasta da aplicação via terminal e compile os arquivos Java:**
    ```bash
    javac -cp lib\gson-2.11.0.jar -d bin src\*.java
    ```
-4. **Abra a pasta da aplicação via terminal e execute o comando abaixo para iniciar a aplicação:**
+4. **Após isso, execute o comando abaixo para iniciar a aplicação:**
    ```bash
    java -cp ".;lib\gson-2.11.0.jar;bin" Main
    ```
-4. **Insira a API Key:**
+5. **Insira a API Key:**
 - Para conseguir uma API Key, você precisa se cadastrar no site da [ExchangeRate-API](https://www.exchangerate-api.com) e clicar em <kbd>Get Free Key!</kbd>
 - Com sua API Key em mãos, basta copiar e colar os dados da sua Key no terminal.
 

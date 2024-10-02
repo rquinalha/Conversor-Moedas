@@ -4,11 +4,11 @@ public enum Moedas {
   BRL("Real Brasileiro", "R$"),
   ARS("Peso Argentino", "$"),
   BOB("Boliviano Boliviano", "Bs"),
-  CLP("Peso Chileno", "$"),
-  COP("Peso Colombiano", "$"),
-  USD("Dólar Americano", "U$"),
-  CAD("Dólar Canadense", "C$"),
-  JPY("Iene Japonês", "¥"),
+  //  CLP("Peso Chileno", "$"),
+//  COP("Peso Colombiano", "$"),
+//  USD("Dólar Americano", "U$"),
+//  CAD("Dólar Canadense", "C$"),
+//  JPY("Iene Japonês", "¥"),
   CNY("Yuan Chinês", "¥");
 
   public static final String[] descricoes;
